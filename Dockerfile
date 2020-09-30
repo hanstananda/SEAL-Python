@@ -1,4 +1,4 @@
-FROM ubuntu:19.10
+FROM python:3.7.8-slim-buster AS seal-python
 
 # Install binary dependencies
 RUN apt-get update && \
