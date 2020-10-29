@@ -23,8 +23,6 @@ CMake (>= 3.10), GNU G++ (>= 6.0) or Clang++ (>= 5.0), Python (>=3.6.8)
 
 `sudo apt-get update && sudo apt-get install g++ make cmake git python3 python3-dev python3-pip`
 
-`git clone https://github.com/Huelse/SEAL-Python.git`
-
 ```shell
 cd SEAL/native/src
 cmake .
