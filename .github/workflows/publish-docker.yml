@@ -3,6 +3,10 @@ name: Publish Docker image
 env:
   IMAGE_NAME: seal-python
 on:
+  push:    # Publish `master` as Docker `latest` image.
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   release:
     types: [published]
 jobs:
