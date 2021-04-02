@@ -29,8 +29,16 @@ jobs:
           [ "$VERSION" == "master" ] && VERSION=latest
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: seal-python:latest
+          tags: ghcr.io/hanstananda/seal-python:latest
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
