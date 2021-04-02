@@ -40,5 +40,3 @@ jobs:
         with:
           push: true
           tags: ghcr.io/hanstananda/seal-python:latest
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
